@@ -315,7 +315,6 @@ window#waybar {
     min-height: 0px;
     padding-top: 0px;
     padding-bottom: 0px;
-    background-color: transparent; /* Changed from rgba(0, 0, 0, 0.8) */
 }
 
 .modules-left, .modules-center, .modules-right {
