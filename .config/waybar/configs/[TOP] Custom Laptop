@@ -1,0 +1,55 @@
+/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
+
+// ### CUSTOM Laptop Layout (Restored Customizations) ### //
+{
+"include": [
+ "/home/hit235/.config/waybar/Modules",
+ "/home/hit235/.config/waybar/ModulesWorkspaces",
+ "/home/hit235/.config/waybar/ModulesCustom",
+ "/home/hit235/.config/waybar/ModulesGroups",
+ "/home/hit235/.config/waybar/UserModules",
+ ],
+"layer": "top",
+"exclusive": true,
+"passthrough": false,
+"position": "top",
+"spacing": 2,
+"fixed-center": true,
+"ipc": true,
+"margin-top": 3,
+"margin-bottom": 3,
+"margin-left": 9,
+"margin-right": 9,
+
+"modules-left": [
+	"custom/volume",
+	"custom/separator#blank",
+	"hyprland/window",
+	"custom/cava_mviz"
+	],
+
+"modules-center": [
+	"group/app_drawer",
+	"group/notify",
+	"custom/separator#line",
+	"hyprland/workspaces#4",
+	"custom/separator#line",
+	"clock",
+	"custom/separator#line",
+	"custom/weather",
+	"custom/separator#line"
+	],
+
+"modules-right": [
+	"tray",
+	"network",
+	"custom/separator#line",
+	"battery",
+	"custom/separator#line",
+	"temperature",
+	"cpu",
+	"memory",
+	"custom/separator#line",
+	"custom/power"
+	],
+}

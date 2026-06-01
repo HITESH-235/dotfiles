@@ -1,0 +1,278 @@
+@define-color noti-border-color #444444;
+@define-color noti-bg black;
+@define-color noti-bg-alt #111111;
+@define-color noti-bg-hover #222222;
+@define-color text-color white;
+
+* {
+    font-family: "JetBrains Mono Nerd Font";
+    font-size: 1rem;
+}
+
+/* Control Center Window */
+.control-center {
+    background: @noti-bg;
+    border: 1px solid @noti-border-color;
+    color: @text-color;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.control-center-list {
+    background: transparent;
+}
+
+.control-center-list > row {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    border: none;
+}
+
+.control-center-list > row:hover,
+.control-center-list > row:focus {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.control-center-list-placeholder {
+    opacity: 0.5;
+}
+
+.blank-window {
+    background: transparent;
+}
+
+/* Base Widget Spacing */
+.widget {
+    margin: 0 0 6px 0;
+    padding: 0;
+}
+.widget:last-child {
+    margin-bottom: 0;
+}
+
+/* Floating & Normal Notification Cards */
+.notification-row {
+    outline: none;
+    margin: 2px 0;
+    background: transparent;
+}
+
+.notification {
+    background: @noti-bg;
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid @noti-border-color;
+    color: @text-color;
+}
+
+/* Symmetrical Gaps for Floating Popups */
+.floating-notifications {
+    background: transparent;
+}
+.floating-notifications .notification-row {
+    margin: 6px 8px;
+}
+.floating-notifications .notification {
+    background: @noti-bg;
+    border: 1px solid @noti-border-color;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Notification Contents */
+.summary {
+    font-weight: bold;
+    color: @text-color;
+}
+.time {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-right: 18px;
+}
+.body {
+    color: @text-color;
+}
+.close-button {
+    background: transparent;
+    color: @text-color;
+    border-radius: 100%;
+    margin-top: 4px;
+    margin-right: 4px;
+    border: none;
+}
+.close-button:hover {
+    background: @noti-bg-alt;
+}
+
+/* Title Widget */
+.widget-title {
+    color: @text-color;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+.widget-title>button {
+    font-size: 0.8rem;
+    color: @text-color;
+    border-radius: 6px;
+    background: transparent;
+    border: none;
+    padding: 2px 8px;
+}
+.widget-title>button:hover {
+    background: @text-color;
+    color: @noti-bg;
+}
+
+/* Do Not Disturb Widget */
+.widget-dnd {
+    font-size: 0.9rem;
+    color: @text-color;
+    margin: 0 0 12px 0;
+    padding: 0;
+}
+.widget-dnd>switch {
+    border-radius: 12px;
+    border: none;
+    background: transparent;
+}
+.widget-dnd>switch:checked {
+    background: @noti-border-color;
+    border: none;
+}
+.widget-dnd>switch slider {
+    background: @text-color;
+    border-radius: 100%;
+}
+.widget-dnd>switch:checked slider {
+    background: @noti-bg;
+}
+
+/* Volume and Backlight Sliders */
+.widget-volume,
+.widget-slider.volume,
+.widget-backlight {
+    font-size: 1rem;
+    color: @text-color;
+    margin: 6px 0;
+    padding: 0;
+}
+.widget-volume label,
+.widget-slider.volume label,
+.widget-backlight label {
+    min-width: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
+    font-size: 0px;
+    opacity: 0;
+}
+.widget-volume scale,
+.widget-slider.volume scale,
+.widget-backlight scale {
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding: 0;
+}
+.widget-volume trough,
+.widget-slider.volume trough,
+.widget-backlight trough {
+    min-height: 4px;
+    background: @noti-bg-hover;
+    border-radius: 2px;
+}
+.widget-volume highlight,
+.widget-slider.volume highlight,
+.widget-backlight highlight {
+    background: @noti-border-color;
+    border-radius: 2px;
+}
+.widget-volume slider,
+.widget-slider.volume slider,
+.widget-backlight slider {
+    background: @text-color;
+    border-radius: 50%;
+    min-width: 16px;
+    min-height: 16px;
+}
+
+/* Buttons Grid Widget */
+.widget-buttons-grid {
+    color: @text-color;
+    margin: 0;
+    padding: 0;
+}
+.widget-buttons-grid>flowbox {
+    margin: 0;
+    padding: 0;
+}
+.widget-buttons-grid>flowbox>flowboxchild {
+    margin: 0;
+    padding: 0;
+}
+.widget-buttons-grid>flowbox>flowboxchild>button {
+    background: @noti-bg-alt;
+    border-radius: 6px;
+    color: @text-color;
+    min-width: 32px;
+    min-height: 32px;
+    padding: 0;
+    margin: 0 8px;
+    border: 1px solid @noti-border-color;
+}
+.widget-buttons-grid>flowbox>flowboxchild>button:hover {
+    background: @text-color;
+    color: @noti-bg;
+}
+
+/* Label Widget */
+.widget-label>label {
+    font-size: 1rem;
+    color: @text-color;
+}
+
+/* MPRIS Media Player Widget */
+.widget-mpris {
+    color: @text-color;
+    background: transparent;
+    padding: 6px;
+    border-radius: 6px;
+}
+.widget-mpris > box > button {
+    border-radius: 6px;
+}
+.widget-mpris-player {
+    padding: 2px;
+}
+.widget-mpris-title {
+    font-weight: bold;
+    font-size: 1rem;
+}
+.widget-mpris-subtitle {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* Hide Scrollbar */
+scrollbar,
+scrollbar.vertical,
+scrollbar.horizontal {
+    background: transparent;
+    opacity: 0;
+    min-width: 0px;
+    min-height: 0px;
+    border: none;
+}
+
+scrollbar slider {
+    background: transparent;
+    border: none;
+}

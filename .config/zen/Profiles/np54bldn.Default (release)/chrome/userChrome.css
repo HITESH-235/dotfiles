@@ -1,0 +1,4 @@
+/* Use system font for UI */
+* {
+    font-family: sans-serif !important;
+}

@@ -1,0 +1,348 @@
+/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
+/*  Vertical Catpuccin Mocha */
+/*  As stated on title, best style for vertical layout waybar config */
+
+* {
+	font-family: "JetBrainsMono Nerd Font";
+	font-weight: bold;
+	min-height: 0;
+	/* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
+	font-size: 97%;
+	font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+}
+
+@import "style/catppuccin-themes/mocha.css";
+
+window#waybar {
+  background-color: @base;
+  border-radius: 5px;
+}
+
+tooltip {
+  background: @base;
+  opacity: 1;
+  border-radius: 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: @sapphire;
+}
+
+tooltip label {
+  color: @blue;
+}
+
+#taskbar button,
+#workspaces button {
+  color: @surface2;
+  background-color: transparent;
+  	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-right: 6px;
+	padding-left: 4px;
+}
+
+#taskbar button.active,
+#workspaces button.active {
+  color: @maroon;
+}
+
+#workspaces button.focused {
+  color: @rosewater;
+  background: transparent;
+  border-radius: 15px;
+}
+
+#workspaces button.urgent {
+  color: #11111b;
+  background: transparent;
+  border-radius: 15px;
+}
+
+#taskbar button:hover,
+#workspaces button:hover {
+  background: transparent;
+  color: @flamingo;
+  border-radius: 15px;
+}
+
+#backlight,
+#backlight-slider,
+#battery,
+#bluetooth,
+#clock,
+#cpu,
+#disk,
+#idle_inhibitor,
+#keyboard-state,
+#memory,
+#mode,
+#mpris,
+#network,
+#power-profiles-daemon,
+#pulseaudio,
+#pulseaudio-slider,
+#taskbar button,
+#taskbar,
+#temperature,
+#tray,
+#window,
+#wireplumber,
+#workspaces,
+#custom-backlight,
+#custom-browser,
+#custom-cava_mviz,
+#custom-cycle_wall,
+#custom-dot_update,
+#custom-file_manager,
+#custom-keybinds,
+#custom-keyboard,
+#custom-light_dark,
+#custom-lock,
+#custom-hint,
+#custom-hypridle,
+#custom-menu,
+#custom-playerctl,
+#custom-power_vertical,
+#custom-power,
+#custom-quit,
+#custom-reboot,
+#custom-settings,
+#custom-spotify,
+#custom-swaync,
+#custom-tty,
+#custom-updater,
+#custom-hyprpicker,
+#custom-weather,
+#custom-weather.clearNight,
+#custom-weather.cloudyFoggyDay,
+#custom-weather.cloudyFoggyNight,
+#custom-weather.default, 
+#custom-weather.rainyDay,
+#custom-weather.rainyNight,
+#custom-weather.severe,
+#custom-weather.showyIcyDay,
+#custom-weather.snowyIcyNight,
+#custom-weather.sunnyDay {
+  opacity: 1;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 6px;
+  padding-left: 6px;
+}
+
+#idle_inhibitor {
+  color: @pink;
+}
+
+#mpris {
+  color: @rosewater;
+}
+
+#battery {
+  color: #a6e3a1;
+  padding-left: 15px;
+  border-radius: 15px 0 0 15px;
+}
+
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: #333333;
+  }
+}
+
+#battery.critical:not(.charging) {
+  color: #f53c3c;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#custom-lock,
+#custom-power {
+  color: @red;
+  border-radius: 15px;
+  font-weight: bolder;
+  padding-left: 1px;
+}
+
+#network {
+  background-color: transparent;
+  color: @mauve;
+}
+
+#backlight {
+  color: @flamingo;
+}
+
+
+#custom-weather {
+  color: @green;
+  border-radius: 15px;
+  background-color: transparent;
+}
+
+#custom-menu {
+  color: #89b4fa;
+}
+
+#pulseaudio {
+  background-color: transparent;
+  color: @blue;
+}
+
+#clock,
+#clock-calender {
+  color: @sapphire;
+}
+
+#custom-dots {
+  color: @sapphire;
+}
+
+#backlight-slider slider,
+#pulseaudio-slider slider {
+  min-height: 7px;
+  min-width: 15px;
+  opacity: 0;
+  background-color: @text;
+  border-radius: 3px;
+  box-shadow: 1px 5px 6px 1px #272727;
+}
+
+#backlight-slider trough,
+#pulseaudio-slider trough {
+  min-height: 100px;
+  min-width: 7px;
+  border-radius: 5px;
+  background-color: @surface0;
+}
+
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+  min-width: 5px;
+  border-radius: 5px;
+  background-color: @blue;
+}
+
+/* ---- Custom Overrides ---- */
+/* ---- Waybar User Overrides (Restored Customizations) ---- */
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 15px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+window#waybar {
+    min-height: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    background-color: transparent; /* Changed from rgba(0, 0, 0, 0.8) */
+}
+
+.modules-left, .modules-center, .modules-right {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+#custom-volume {
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-right: 14px;
+    min-width: 50px;
+}
+
+#window,
+window#waybar.empty #window {
+    padding-left: 0px; 
+    padding-right: 4px;
+}
+
+#network {
+    padding-left: 2px;
+    padding-right: 6px;
+    min-width: 20px;
+}
+
+#custom-separator {
+    color: grey;
+    opacity: 0.5;
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
+#tray {
+    padding-left: 2px;
+    padding-right: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+#battery,
+#temperature,
+#cpu,
+#memory {
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+#custom-power {
+    font-size: 20px;
+    background-image: url("/home/hit235/Downloads/Omnitrix.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 17px 17px; /* Increased from 16px */
+    color: transparent;
+    min-width: 23px;             /* Adjusted container to fit */
+    min-height: 23px;            /* Adjusted container to fit */
+    padding: 0px;
+    margin: 0px 8px;
+}
+
+/* Ensure no individual module adds height */
+#backlight, #battery, #bluetooth, #clock, #cpu, #disk, #idle_inhibitor, #keyboard-state, #memory, #mode, #mpris, #network, #power-profiles-daemon, #pulseaudio, #custom-volume, #custom-mic, #temperature, #tray, #window, #wireplumber, #workspaces, #custom-menu, #custom-power, #custom-weather {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    min-height: 0px;
+}
+
+#workspaces button,
+#workspaces button:hover,
+#workspaces button.active,
+#workspaces button.persistent,
+#workspaces button.urgent {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 0px;
+    margin-right: 3px;
+}
+
+#workspaces button:last-child {
+    margin-right: 0px;
+}
+
+#workspaces {
+    padding-right: 0px;
+    margin-right: 0px;
+}
+
+#antigravity,
+#Antigravity,
+#Antigravity_status_icon_1 {
+    min-width: 0px;
+    min-height: 0px;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    opacity: 0;
+}
+
+

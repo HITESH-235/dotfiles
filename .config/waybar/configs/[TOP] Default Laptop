@@ -1,0 +1,59 @@
+/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
+
+// ### DEFAULT Laptop - Top ### //
+{
+"include": [
+ "/home/hit235/.config/waybar/Modules",
+ "/home/hit235/.config/waybar/ModulesWorkspaces",
+ "/home/hit235/.config/waybar/ModulesCustom",
+ "/home/hit235/.config/waybar/ModulesGroups",
+ "/home/hit235/.config/waybar/UserModules",
+ ],
+"layer": "top",
+"exclusive": true,
+"passthrough": false,
+"position": "top",
+"spacing": 5,
+"fixed-center": true,
+"ipc": true,
+"margin-top": 5,
+"margin-left": 12,
+"margin-right": 12,
+
+"modules-left": [
+	"custom/power",
+	"custom/separator#blank",
+	"custom/cava_mviz",
+	"custom/separator#blank",
+	"custom/separator#blank_2",
+	"hyprland/window"
+	],
+
+"modules-center": [
+	"group/app_drawer",
+	"custom/separator#blank",
+	"group/notify",
+	"custom/separator#dot-line",
+	"hyprland/workspaces#rw",
+	"clock",
+	"custom/separator#dot-line",
+	"custom/weather",
+	"custom/separator#dot-line"
+	],
+
+"modules-right": [
+	"tray",
+	"bluetooth",
+	"custom/separator#dot-line",
+	"group/laptop",
+	"custom/separator#dot-line",
+	"custom/separator#line", 
+	"group/audio",
+	"custom/separator#dot-line", 
+	"temperature",
+	"cpu",
+	"memory",
+	"custom/separator#dot-line",
+	"group/status"
+	],
+}

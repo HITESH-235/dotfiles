@@ -1,0 +1,32 @@
+/* ---- Waybar User Overrides (Universal Compact Styling) ---- */
+
+/* Tighter spacing for workspaces */
+#workspaces button {
+    padding-left: 1px;
+    padding-right: 1px;
+    margin-left: -1px;
+    margin-right: -1px;
+}
+
+#workspaces {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: -2px;
+    margin-right: -2px;
+}
+
+/* Compact spacing for center items & separators */
+#custom-separator,
+.modules-center #custom-separator {
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+#clock {
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
