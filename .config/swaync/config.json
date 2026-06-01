@@ -32,7 +32,7 @@
       "dnd",
       "buttons-grid",
       "mpris",
-      "slider#volume", 
+      "volume", 
       "backlight",
       "title",
       "notifications"
@@ -54,12 +54,8 @@
           "image-size": 50,
           "image-radius": 12
       },
-      "slider#volume": {
-          "label": "",
-          "max": 150,
-          "min": 0,
-          "cmd_setter": "pamixer --set-volume $value",
-          "cmd_getter": "pamixer --get-volume"
+      "volume": {
+          "label": ""
       },
       "backlight": {
           "label": ""

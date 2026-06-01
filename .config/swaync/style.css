@@ -155,7 +155,6 @@
 
 /* Volume and Backlight Sliders */
 .widget-volume,
-.widget-slider.volume,
 .widget-backlight {
     font-size: 1rem;
     color: @text-color;
@@ -163,7 +162,6 @@
     padding: 0;
 }
 .widget-volume label,
-.widget-slider.volume label,
 .widget-backlight label {
     min-width: 0px;
     margin-right: 0px;
@@ -174,7 +172,6 @@
     opacity: 0;
 }
 .widget-volume scale,
-.widget-slider.volume scale,
 .widget-backlight scale {
     margin-left: 8px;
     margin-right: 8px;
@@ -183,20 +180,17 @@
     padding: 0;
 }
 .widget-volume trough,
-.widget-slider.volume trough,
 .widget-backlight trough {
     min-height: 4px;
     background: @noti-bg-hover;
     border-radius: 2px;
 }
 .widget-volume highlight,
-.widget-slider.volume highlight,
 .widget-backlight highlight {
     background: @noti-border-color;
     border-radius: 2px;
 }
 .widget-volume slider,
-.widget-slider.volume slider,
 .widget-backlight slider {
     background: @text-color;
     border-radius: 50%;
