@@ -35,7 +35,7 @@
 "modules-center": ["hyprland/workspaces#kanji"], 
 	
 "modules-right": [
-	"custom/volume",
+	"pulseaudio#1",
 	"backlight#2", 
 	"battery",
 	"custom/nightlight"

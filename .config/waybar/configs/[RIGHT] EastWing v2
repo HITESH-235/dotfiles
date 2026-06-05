@@ -39,7 +39,7 @@
 	"tray",
 	"backlight#vertical",
 	"pulseaudio/slider",
-	"custom/volume_mic_vertical",
+	"pulseaudio#microphone_vertical",
 	"custom/nightlight",
 	"group/power#vert",
 ],

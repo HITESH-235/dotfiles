@@ -8,15 +8,24 @@
 "temperature": {
 	"interval": 10,
 	"tooltip": true,
-	"thermal-zone": 10,
+	"hwmon-path": [
+		"/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input",
+		"/sys/devices/platform/coretemp.0/hwmon/hwmon5/temp1_input",
+		"/sys/devices/platform/coretemp.0/hwmon/hwmon7/temp1_input",
+		"/sys/class/hwmon/hwmon6/temp1_input",
+		"/sys/class/hwmon/hwmon5/temp1_input",
+		"/sys/class/hwmon/hwmon7/temp1_input"
+	],
 	"critical-threshold": 82,
 	"format-critical": "{icon} {temperatureC}°C",
 	"format": "{icon} {temperatureC}°C",
 	"format-icons": [
-		"󰈸"
+		"󰍛"
 	],
 	"on-click-right": "$HOME/.config/hypr/scripts/WaybarScripts.sh --nvtop"
-},"backlight": {
+},
+
+"backlight": {
 	"interval": 2,
 	"align": 0,
 	"rotate": 0,
@@ -40,7 +49,7 @@
 	"on-update": "",
 	"on-scroll-up": "$HOME/.config/hypr/scripts/Brightness.sh --inc",
 	"on-scroll-down": "$HOME/.config/hypr/scripts/Brightness.sh --dec",
-	"smooth-scrolling-threshold": 1
+	"smooth-scrolling-threshold": 1,
 },
 
 "backlight#2": {
@@ -75,26 +84,25 @@
 	"tooltip": true,
 	"tooltip-format": "{timeTo} {power}w",
 	"on-click-middle": "$HOME/.config/hypr/scripts/ChangeBlur.sh",
-	"on-click-right": "$HOME/.config/hypr/scripts/Wlogout.sh"
+	"on-click-right": "$HOME/.config/hypr/scripts/Wlogout.sh",
 },
 
 "bluetooth": {
-	"format": "󰂯",
-	"format-disabled": "󰂲",
-	"format-connected": "󰂱",
-	"format-connected-battery": "󰂱 {device_battery_percentage}%",
-	"tooltip-format": "{device_alias}",
+	"format": " ",
+	"format-disabled": "󰂳",
+	"format-connected": "󰂱 {num_connections}",
+	"tooltip-format": " {device_alias}",
 	"tooltip-format-connected": "{device_enumerate}",
-	"tooltip-format-enumerate-connected": "{device_alias} 󰂄{device_battery_percentage}%",
+	"tooltip-format-enumerate-connected": " {device_alias} 󰂄{device_battery_percentage}%",
 	"tooltip": true,
-	"on-click": "blueman-manager"
+	"on-click": "blueman-manager",
 },
 
 "clock": {
 	"interval": 1,
     "format": " {:%I:%M %p}", // AM PM format
     //"format": " {:%H:%M:%S}",// 24H
-	"format-alt": " {:L%H:%M   %Y, %d %B, %A}",
+	"format-alt": " {:%H:%M   %Y, %d %B, %A}",
 	"tooltip-format": "<tt><small>{calendar}</small></tt>",
 	"calendar": {
 		"mode": "year",
@@ -121,37 +129,42 @@
 
 "clock#2": {
     "format": " {:%I:%M %p}", // AM PM format
-    //"format": " {:%H:%M}",// 24H
-    "format-alt": "{:L%A  |  %H:%M  |  %e %B}",
+    //"format": "  {:%H:%M}",// 24H
+    "format-alt": "{:%A  |  %H:%M  |  %e %B}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
 },
 
 "clock#3": {
-    //"format": "{:L%I:%M %p - %d/%b}", //for AM/PM
-    "format": "{:L%H:%M - %d/%b}", // 24H
+    "format": "{:%I:%M %p - %d/%b}",//for AM/PM
+    //"format": "{:%H:%M - %d/%b}",// 24H
 	"tooltip": false
 },
 
 "clock#4": {
 	"interval": 60,
-    //"format": "{:L%B | %a %d, %Y | %I:%M %p}", // AM PM format
-    "format": "{:L%B | %a %d, %Y | %H:%M}", // 24H
-	"format-alt": "{:L%a %b %d, %G}",
-	"tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>"
+    "format": "{:%B | %a %d, %Y | %I:%M %p}",// AM PM format
+    //"format": "{:%B | %a %d, %Y | %H:%M}",// 24H
+	"format-alt": "{:%a %b %d, %G}",
+	"tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
 },
 
 "clock#5": {
     "format": "{:%A, %I:%M %P}",// AM PM format
     //"format": "{:%a %d | %H:%M}",// 24H
-	"format-alt": "{:L%A, %d %B, %Y (%R)}",
-	"tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>"
+	"format-alt": "{:%A, %d %B, %Y (%R)}",
+	"tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>",
 },
 
 "cpu": {
-	"format": "{usage}%",
+	"format": "󰍛 {usage}%",
 	"interval": 1,
 	"min-length": 5,
-	"on-click-right": "gnome-system-monitor"
+	"format-alt-click": "click",
+	"format-alt": "󰍛 {icon0}{icon1}{icon2}{icon3} {usage:>2}%",
+	"format-icons": [
+		"▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"
+	],
+	"on-click-right": "gnome-system-monitor",
 },
 
 "disk": {
@@ -159,9 +172,9 @@
 	//"format": "󰋊",
 	"path": "/",
 	//"format-alt-click": "click",
-	"format": "{percentage_used}% 󰋊",
+	"format": "󰋊 {percentage_used}%",
 	//"tooltip": true,
-	"tooltip-format": "{used} used out of {total} on {path} ({percentage_used}%)"
+	"tooltip-format": "{used} used out of {total} on {path} ({percentage_used}%)",
 },
 
 "hyprland/language": {
@@ -174,7 +187,7 @@
 
 "hyprland/submap": {
 	"format": "<span style=\"italic\">  {}</span>", // Icon: expand-arrows-alt
-	"tooltip": false
+	"tooltip": false,
 },
 
 "hyprland/window": {
@@ -187,8 +200,8 @@
 		"(.*) — Mozilla Firefox": " $1",
 		"(.*) - fish": "> [$1]",
 		"(.*) - zsh": "> [$1]",
-		"(.*) - $term": "> [$1]"
-	}
+		"(.*) - $term": "> [$1]",
+	},
 },
 
 "idle_inhibitor": {
@@ -198,7 +211,7 @@
 	"format": "{icon}",
 	"format-icons": {
 		"activated": " ",
-		"deactivated": " "
+		"deactivated": " ",
 	}
 },
 
@@ -207,19 +220,21 @@
 	"capslock": true,
 	"format": {
 		"numlock": "N {icon}",
-		"capslock": "󰪛 {icon}"
+		"capslock": "󰪛 {icon}",
 	},
 	"format-icons": {
 		"locked": "",
 		"unlocked": ""
-	}
+	},
 },
 
 "memory": {
 	"interval": 10,
-	"format": "{percentage}%",
+	"format": "󰾆 {percentage}%",
+	"format-alt": "󰾆 {used:0.1f}G",
+	"format-alt-click": "click",
 	"tooltip": true,
-	"tooltip-format": "{used:0.1f}GB/{total:0.1f}GB",
+	"tooltip-format": "{used:0.1f}GB/{total:0.1f}G",
 	"on-click-right": "$HOME/.config/hypr/scripts/WaybarScripts.sh --btop"
 },
 
@@ -244,32 +259,31 @@
 		"mopidy": "",
 		"mpv": "󰐹",
 		"spotify": "",
-		"vlc": "󰕼"
+		"vlc": "󰕼",
 	},
 	"status-icons": {
 		"paused": "󰐎",
 		"playing": "",
-		"stopped": ""
+		"stopped": "",
 	},
 	// "ignored-players": ["firefox"]
-	"max-length": 30
+	"max-length": 30,
 },
 
 "network": {
 	"format": "{ifname}",
 	"format-wifi": "{icon}",
-	"format-ethernet": "󰈀",
-	"format-disconnected": "󰖪",
+	"format-ethernet": "󰌘",
+	"format-disconnected": "󰌙",
 	"tooltip-format": "{ipaddr}  {bandwidthUpBits}  {bandwidthDownBits}",
 	"format-linked": "󰈁 {ifname} (No IP)",
 	"tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
-	"tooltip-format-ethernet": "{ifname} 󰈀",
-	"tooltip-format-disconnected": "󰖪 Disconnected",
+	"tooltip-format-ethernet": "{ifname} 󰌘",
+	"tooltip-format-disconnected": "󰌙 Disconnected",
 	"max-length": 30,
 	"format-icons": [
 		"󰤯", "󰤟", "󰤢", "󰤥", "󰤨"
 	],
-	"on-click": "nm-connection-editor",
 	"on-click-right": "$HOME/.config/hypr/scripts/WaybarScripts.sh --nmtui"
 },
 
@@ -288,8 +302,7 @@
 	"max-length": 24,
 	"format-icons": [
 		"󰤯", "󰤟", "󰤢", "󰤥", "󰤨"
-	],
-	"on-click": "nm-connection-editor"
+	]
 },
 
 "power-profiles-daemon": {
@@ -305,7 +318,6 @@
 },
 
 "pulseaudio": {
-	"max-volume": 150,
 	"format": "{icon} {volume}%",
 	"format-bluetooth": "{icon} 󰂰 {volume}%",
 	"format-muted": "󰖁",
@@ -321,21 +333,20 @@
 		],
 		"ignored-sinks": [
 			"Easy Effects Sink"
-		]
+		],
 	},
-	"scroll-step": 2.0,
+	"scroll-step": 5.0,
 	"on-click": "$HOME/.config/hypr/scripts/Volume.sh --toggle",
 	"on-click-right": "pavucontrol -t 3",
 	"on-scroll-up": "$HOME/.config/hypr/scripts/Volume.sh --inc",
 	"on-scroll-down": "$HOME/.config/hypr/scripts/Volume.sh --dec",
 	"tooltip-format": "{icon} {desc} | {volume}%",
-	"smooth-scrolling-threshold": 1
+	"smooth-scrolling-threshold": 1,
 },
 
 "pulseaudio#1": {
-	"max-volume": 150,
   "format": "{icon} {volume}%",
-  "format-bluetooth": "{icon}  {volume}%",
+  "format-bluetooth": "{icon} {volume}%",
   "format-bluetooth-muted": " {icon}",
   "format-muted": "󰸈",
   "format-icons": {
@@ -350,11 +361,10 @@
   "on-click": "pamixer --toggle-mute",
   "on-click-right": "pavucontrol -t 3",
   "tooltip": true,
-  "tooltip-format": "{icon} {desc} | {volume}%"
+  "tooltip-format": "{icon} {desc} | {volume}%",
 },
 
 "pulseaudio#microphone": {
-	"max-volume": 150,
 	"format": "{format_source}",
 	"format-source": " {volume}%",
 	"format-source-muted": "",
@@ -363,22 +373,15 @@
 	"on-scroll-up": "$HOME/.config/hypr/scripts/Volume.sh --mic-inc",
 	"on-scroll-down": "$HOME/.config/hypr/scripts/Volume.sh --mic-dec",
 	"tooltip-format": "{source_desc} | {source_volume}%",
-	"scroll-step": 2.0,
-	"smooth-scrolling-threshold": 1
+	"scroll-step": 5,
 },
 
 "tray": {
 	"icon-size": 20,
-	"spacing": 2,
-	"ignore-list": [
-		"antigravity",
-		"Antigravity",
-		"Antigravity_status_icon_1"
-	]
+	"spacing": 4,
 },
 
 "wireplumber": {
-	"max-volume": 150,
 	"format": "{icon} {volume} %",
 	"format-muted": " Mute",
 	"on-click": "$HOME/.config/hypr/scripts/Volume.sh --toggle",
@@ -387,7 +390,7 @@
 	"on-scroll-down": "$HOME/.config/hypr/scripts/Volume.sh --dec",
 	"format-icons": [
 		"", "", "󰕾", ""
-	]
+	],
 },
 
 "wlr/taskbar": {
@@ -402,6 +405,6 @@
 		"rofi",
 		"kitty",
     "kitty-dropterm"
-		]
-}
+		],
+},
 }

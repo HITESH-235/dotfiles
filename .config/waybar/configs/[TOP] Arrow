@@ -23,7 +23,7 @@
 
 	"modules-right": [
 		"custom/arrow9",
-		"custom/volume",
+		"pulseaudio",
 		"custom/arrow8",
 		"network",
 		"custom/arrow7",

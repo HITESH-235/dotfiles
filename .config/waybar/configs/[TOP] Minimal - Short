@@ -32,7 +32,7 @@
 	"network", 
 	"bluetooth", 
 	"backlight", 
-	"custom/volume", 
+	"pulseaudio", 
 	"battery", 
 	"custom/nightlight",
 	"custom/power"],

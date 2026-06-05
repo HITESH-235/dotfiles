@@ -6,7 +6,7 @@
 	font-weight: bold;
 	min-height: 0;
 	/* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
-	font-size: 20px;
+	font-size: 97%;
 	font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
 }
 
@@ -118,7 +118,7 @@ tooltip label{
 #mpris,
 #network,
 #power-profiles-daemon,
-#pulseaudio, #custom-volume, #custom-mic,
+#pulseaudio,
 #pulseaudio-slider,
 #taskbar,
 #temperature,
@@ -127,7 +127,6 @@ tooltip label{
 #wireplumber,
 #workspaces,
 #custom-backlight,
-#custom-nightlight,
 #custom-browser,
 #custom-cava_mviz,
 #custom-cycle_wall,
@@ -136,7 +135,6 @@ tooltip label{
 #custom-keybinds,
 #custom-keyboard,
 #custom-light_dark,
-#custom-nightlight,
 #custom-lock,
 #custom-hint,
 #custom-hypridle,
@@ -172,10 +170,9 @@ tooltip label{
 #custom-hypridle.notactive,
 #idle_inhibitor.activated {
 	color: #39FF14;
-    border-bottom: 8px solid rgba(0, 0, 0, 0.2);
 }
 
-#pulseaudio.muted, #custom-volume.muted, #custom-mic.muted {
+#pulseaudio.muted {
 	color: #cc3436;
 }
 #temperature.critical {

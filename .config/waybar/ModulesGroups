@@ -14,10 +14,11 @@
         },
 	"modules": [
 		"custom/menu",
+		"custom/light_dark",
 		"custom/file_manager",
 		"custom/tty",
 		"custom/browser",
-		"custom/settings"
+		"custom/settings",
 	]
 },
 "group/motherboard": {
@@ -27,7 +28,7 @@
 		"power-profiles-daemon",
 		"memory",
 		"temperature",
-		"disk"
+		"disk",
 	]
 },
 
@@ -41,35 +42,25 @@
 	"modules": [
 		"temperature",		
 		"cpu",
-		"power-profiles-daemon",	
 		"memory",
-		"disk"
-	]
-},
-"group/hardware": {
-	"orientation": "horizontal",
-	"modules": [
-		"temperature",
-		"cpu",
-		"memory"
+		"disk",
 	]
 },
 "group/laptop": {
 	"orientation": "inherit",
 	"modules": [
-		"battery"
+		"battery",
 	]
 },
 "group/audio": {
 	"orientation": "inherit",
 	"drawer": {
 		"transition-duration": 500,
-		"children-class": "custom/volume",
+		"children-class": "pulseaudio",
 		"transition-left-to-right": true
         },
 	"modules": [
-		"custom/volume",
-		"custom/volume_mic"
+		"pulseaudio",
 	]
 },
 
@@ -82,7 +73,7 @@
         },
 	"modules": [
 		"network",
-		"bluetooth"
+		"bluetooth",
 	]
 },
 
@@ -97,7 +88,7 @@
 		"custom/power",
 		"custom/lock",
 		"keyboard-state",
-		"custom/keyboard"
+		"custom/keyboard",
 	]
 },
 "group/notify": {
@@ -109,7 +100,7 @@
         },
 	"modules": [
 		"custom/swaync",
-		"custom/dot_update"
+		"custom/dot_update",
 	]
 },
 
@@ -141,5 +132,5 @@
         "custom/logout",
         "custom/reboot"
       ]
-}
+},
 }

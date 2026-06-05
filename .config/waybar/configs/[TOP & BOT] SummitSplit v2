@@ -32,7 +32,7 @@
       "mpris",
       "battery",
       "backlight",
-      "custom/volume",
+      "pulseaudio",
       "group/mobo_drawer", 
       "idle_inhibitor",
       "custom/nightlight",
