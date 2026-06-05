@@ -75,6 +75,11 @@
     margin-right: 0px;
 }
 
+#custom-menu {
+    padding-left: 2px;
+    margin-left: -2px;
+}
+
 #custom-power {
     margin-left: 2px;
 }
