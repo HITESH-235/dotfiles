@@ -11,15 +11,17 @@
 #workspaces {
     padding-left: 0px;
     padding-right: 0px;
-    margin-left: -2px;
-    margin-right: -2px;
+    margin-left: -6px;
+    margin-right: -6px;
 }
 
 /* Compact spacing for center items & separators */
 #custom-separator,
-.modules-center #custom-separator {
-    padding-left: 2px;
-    padding-right: 2px;
+.modules-center #custom-separator,
+.modules-right #custom-separator {
+    color: rgba(255, 255, 255, 0.15);
+    padding-left: 1px;
+    padding-right: 1px;
     margin-left: 0px;
     margin-right: 0px;
 }
@@ -29,4 +31,61 @@
     padding-right: 4px;
     margin-left: 0px;
     margin-right: 0px;
+}
+
+/* Drawer modules spacing */
+#cpu,
+#memory,
+#disk,
+#custom-asus_profile,
+#temperature {
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+/* Tighten specific modules */
+#network {
+    padding-left: 2px;
+    padding-right: 6px;
+    margin-left: 0px;
+    margin-right: 0px;
+    min-width: 0px;
+}
+
+#battery {
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+#pulseaudio {
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+#idle_inhibitor {
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+#custom-power {
+    margin-left: 2px;
+}
+
+#custom-playerctl.paused,
+#custom-playerctl.Paused,
+#custom-playerctl.stopped,
+#custom-playerctl.Stopped {
+    font-size: 0px;
+    padding: 0px;
+    margin: 0px;
+    min-width: 0px;
+    opacity: 0;
 }
