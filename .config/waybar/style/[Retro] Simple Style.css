@@ -177,4 +177,4 @@ window#waybar {
 	min-height: 10px; 
 	border-radius: 5px;
 	background-color: @green;
-}
+}@import "/home/hit235/.config/waybar/user-overrides.css";

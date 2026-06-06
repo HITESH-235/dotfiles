@@ -205,3 +205,4 @@ window#waybar.hidden {
 	border-radius: 5px;
 }
 
+@import "/home/hit235/.config/waybar/user-overrides.css";

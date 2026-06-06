@@ -145,6 +145,7 @@
 	"return-type": "json",
 	"max-length": 12,
 	"exec": "playerctl -a metadata --format '{\"text\": \"{{markup_escape(artist)}}  {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+
 	"on-click-middle": "playerctl play-pause",
 	"on-click": "playerctl previous",
 	"on-click-right": "playerctl next",

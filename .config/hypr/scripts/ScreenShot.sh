@@ -150,6 +150,17 @@ shotswappy() {
   fi
 }
 
+shotnowswappy() {
+	tmpfile=$(mktemp)
+	grim - >"$tmpfile" 
+
+  # Copy without saving
+  if [[ -s "$tmpfile" ]]; then
+		wl-copy <"$tmpfile"
+    notify_view "swappy"
+  fi
+}
+
 if [[ ! -d "$dir" ]]; then
 	mkdir -p "$dir"
 fi
@@ -170,8 +181,10 @@ elif [[ "$1" == "--active-swappy" ]]; then
 	shotactiveswappy
 elif [[ "$1" == "--swappy" ]]; then
 	shotswappy
+elif [[ "$1" == "--swappy-now" ]]; then
+	shotnowswappy
 else
-	echo -e "Available Options : --now --in5 --in10 --win --area --active --active-swappy --swappy"
+	echo -e "Available Options : --now --in5 --in10 --win --area --active --active-swappy --swappy --swappy-now"
 fi
 
 exit 0

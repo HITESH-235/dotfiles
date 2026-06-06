@@ -290,3 +290,4 @@
 	color: @unfocused;
 	background: transparent;
 }
+@import "/home/hit235/.config/waybar/user-overrides.css";

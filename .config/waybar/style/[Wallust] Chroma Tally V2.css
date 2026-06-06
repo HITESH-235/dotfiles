@@ -273,3 +273,4 @@ tooltip {
     border-radius: 5px;
     background-color: @color6; /* Lighter highlight */
 }
+@import "/home/hit235/.config/waybar/user-overrides.css";

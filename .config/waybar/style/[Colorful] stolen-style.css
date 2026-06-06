@@ -346,3 +346,4 @@ window#waybar.empty #window {
   padding-left: 6px;
   color: #f7768e;
 }
+@import "/home/hit235/.config/waybar/user-overrides.css";

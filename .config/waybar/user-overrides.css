@@ -1,5 +1,30 @@
 /* ---- Waybar User Overrides (Universal Compact Styling) ---- */
 
+/* Global font size and compact height - consistent across all themes */
+* {
+    font-size: 15px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+window#waybar {
+    min-height: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.modules-left, .modules-center, .modules-right {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+#backlight, #battery, #bluetooth, #clock, #cpu, #disk, #idle_inhibitor, #keyboard-state, #memory, #mode, #mpris, #network, #power-profiles-daemon, #pulseaudio, #custom-volume, #custom-mic, #temperature, #tray, #window, #wireplumber, #workspaces, #custom-menu, #custom-power, #custom-weather {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    min-height: 0px;
+}
 /* Tighter spacing for workspaces */
 #workspaces button {
     padding-left: 1px;

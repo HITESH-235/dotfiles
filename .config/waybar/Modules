@@ -242,6 +242,7 @@
 	"interval": 10,
 	"format": "{player_icon} ",
 	"format-paused": "{status_icon} <i>{dynamic}</i>",
+
 	"on-click-middle": "playerctl play-pause",
 	"on-click": "playerctl previous",
 	"on-click-right": "playerctl next",
