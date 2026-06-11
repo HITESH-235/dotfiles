@@ -46,6 +46,15 @@ fi
 # Strip any existing refresh rate from resolution to set it dynamically
 base_res=$(echo "$RES" | sed 's/@.*//')
 
+# Function to run command with drop permissions if root, or directly if user
+run_cmd() {
+    if [ "$(id -u)" -eq 0 ]; then
+        sudo -u $USER_NAME -E "$@"
+    else
+        "$@"
+    fi
+}
+
 if [ "$AC_STATUS" -eq 1 ]; then
     # PLUGGED IN: Go to 120Hz (keep user's resolution, position, scale, and options)
     if [ -n "$OPTIONS" ]; then
@@ -53,8 +62,8 @@ if [ "$AC_STATUS" -eq 1 ]; then
     else
         monitor_cmd="$MONITOR,$base_res@120.0,$POS,$SCALE"
     fi
-    sudo -u $USER_NAME -E hyprctl keyword monitor "$monitor_cmd"
-    sudo -u $USER_NAME -E notify-send -t 2000 -i "power-plug" "Power Connected" "Switching to 120Hz"
+    run_cmd hyprctl keyword monitor "$monitor_cmd"
+    run_cmd notify-send -t 2000 -i "power-plug" "Power Connected" "Switching to 120Hz" || true
 else
     # ON BATTERY: Drop to 60Hz (keep user's resolution, position, scale, and options)
     if [ -n "$OPTIONS" ]; then
@@ -62,6 +71,6 @@ else
     else
         monitor_cmd="$MONITOR,$base_res@60,$POS,$SCALE"
     fi
-    sudo -u $USER_NAME -E hyprctl keyword monitor "$monitor_cmd"
-    sudo -u $USER_NAME -E notify-send -t 2000 -i "battery-low" "Power Disconnected" "Switching to 60Hz to save battery"
+    run_cmd hyprctl keyword monitor "$monitor_cmd"
+    run_cmd notify-send -t 2000 -i "battery-low" "Power Disconnected" "Switching to 60Hz to save battery" || true
 fi
