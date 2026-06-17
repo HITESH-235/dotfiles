@@ -5,7 +5,10 @@
 iDIR="$HOME/.config/swaync/icons"
 sDIR="$HOME/.config/hypr/scripts"
 
-# Get Volume
+# Max hardware volume (corresponds to 100% in UI)
+HW_MAX=150
+
+# Get Volume (scaled: 0-150 hw -> 0-100 ui)
 get_volume() {
     if [[ "$(pamixer --get-mute)" == "true" ]]; then
         echo "Muted"
@@ -16,7 +19,9 @@ get_volume() {
     hw_volume=$(pamixer --get-volume)
     
     local ui_volume
-    ui_volume=$hw_volume
+    ui_volume=$(( hw_volume * 100 / HW_MAX ))
+    # Clamp to 100
+    (( ui_volume > 100 )) && ui_volume=100
     
     if [[ "$ui_volume" -eq 0 ]]; then
         echo "Muted"
@@ -63,13 +68,12 @@ notify_user() {
     pkill -RTMIN+8 waybar
 }
 
-# Increase Volume
+# Increase Volume (step ~5% of UI = 8 raw units out of 150)
 inc_volume() {
     if [ "$(pamixer --get-mute)" == "true" ]; then
         toggle_mute
     else
-        # Increase HW volume by 5%
-        pamixer -i 5 --set-limit 100 && notify_user
+        pamixer -i 8 --allow-boost --set-limit $HW_MAX && notify_user
     fi
 }
 
@@ -78,7 +82,7 @@ dec_volume() {
     if [ "$(pamixer --get-mute)" == "true" ]; then
         toggle_mute
     else
-        pamixer -d 5 --set-limit 100 && notify_user
+        pamixer -d 8 --allow-boost --set-limit $HW_MAX && notify_user
     fi
 }
 
@@ -112,7 +116,7 @@ get_mic_icon() {
     fi
 }
 
-# Get Microphone Volume
+# Get Microphone Volume (scaled: 0-150 hw -> 0-100 ui)
 get_mic_volume() {
     if [[ "$(pamixer --default-source --get-mute)" == "true" ]]; then
         echo "Muted"
@@ -123,7 +127,8 @@ get_mic_volume() {
     hw_volume=$(pamixer --default-source --get-volume)
     
     local ui_volume
-    ui_volume=$hw_volume
+    ui_volume=$(( hw_volume * 100 / HW_MAX ))
+    (( ui_volume > 100 )) && ui_volume=100
     
     if [[ "$ui_volume" -eq 0 ]]; then
         echo "Muted"
@@ -158,7 +163,7 @@ inc_mic_volume() {
     if [ "$(pamixer --default-source --get-mute)" == "true" ]; then
         toggle_mic
     else
-        pamixer --default-source -i 5 --set-limit 100 && notify_mic_user
+        pamixer --default-source -i 8 --allow-boost --set-limit $HW_MAX && notify_mic_user
     fi
 }
 
@@ -167,7 +172,7 @@ dec_mic_volume() {
     if [ "$(pamixer --default-source --get-mute)" == "true" ]; then
         toggle_mic
     else
-        pamixer --default-source -d 5 --set-limit 100 && notify_mic_user
+        pamixer --default-source -d 8 --allow-boost --set-limit $HW_MAX && notify_mic_user
     fi
 }
 
@@ -205,13 +210,13 @@ case "$1" in
   inc_volume
   ;;
 "--inc-precise")
-  pamixer -i 2 --set-limit 100 && notify_user
+  pamixer -i 3 --allow-boost --set-limit $HW_MAX && notify_user
   ;;
 "--dec")
   dec_volume
   ;;
 "--dec-precise")
-  pamixer -d 2 --set-limit 100 && notify_user
+  pamixer -d 3 --allow-boost --set-limit $HW_MAX && notify_user
   ;;
 "--toggle")
   toggle_mute

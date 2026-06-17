@@ -165,6 +165,7 @@
 		"▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"
 	],
 	"on-click-right": "gnome-system-monitor",
+	"tooltip": true,
 },
 
 "disk": {

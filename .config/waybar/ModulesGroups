@@ -56,11 +56,11 @@
 	"orientation": "inherit",
 	"drawer": {
 		"transition-duration": 500,
-		"children-class": "pulseaudio",
+		"children-class": "custom/volume",
 		"transition-left-to-right": true
         },
 	"modules": [
-		"pulseaudio",
+		"custom/volume",
 	]
 },
 
