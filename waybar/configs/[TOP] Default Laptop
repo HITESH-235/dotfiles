@@ -1,0 +1,63 @@
+/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
+
+// ### DEFAULT Laptop  - Top ### //
+{
+"include": [
+  "$HOME/.config/waybar/Modules",
+  "$HOME/.config/waybar/ModulesWorkspaces",
+  "$HOME/.config/waybar/ModulesCustom",
+  "$HOME/.config/waybar/ModulesGroups",
+  "$HOME/.config/waybar/UserModules",
+  ],
+"layer": "top",
+"tooltip": true,
+//"mode": "dock",
+"exclusive": true,
+"passthrough": false,
+"position": "top",
+"spacing": 3,
+"fixed-center": true,
+"ipc": true,
+"margin-top": 3,
+"margin-bottom": 0,
+"margin-left": 7,
+"margin-right": 7,
+
+"modules-left": [
+	"custom/separator#blank",
+	"idle_inhibitor",
+	"custom/separator#blank",
+	"custom/asus_profile",
+	"custom/separator#dot-line",
+	"hyprland/window",
+	"custom/separator#blank",
+	"custom/cava_mviz",
+	],
+
+"modules-center": [
+	"group/app_drawer",
+	"group/notify",
+	"custom/separator#dot-line",
+	"hyprland/workspaces#rw",
+	"custom/separator#dot-line",
+	"clock",
+	"custom/separator#dot-line",
+	"custom/weather",
+	],
+
+"modules-right": [
+	"tray",
+	"custom/separator#dot-line",
+	"network",
+	"custom/separator#dot-line",
+	"bluetooth",
+	"custom/separator#dot-line",
+	"group/laptop",
+	"custom/separator#dot-line",
+	"group/mobo_drawer",
+	"custom/separator#dot-line",  
+	"group/audio",
+	"custom/separator#dot-line", 
+	"group/status",
+	],
+}
