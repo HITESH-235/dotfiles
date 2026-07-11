@@ -125,6 +125,7 @@ window#waybar.empty #window {
 
 #network,
 #pulseaudio,
+#custom-volume,
 #battery,
 #clock {
     margin-right: 20px;
@@ -148,6 +149,7 @@ window#waybar.empty #window {
 #network,
 #power-profiles-daemon,
 #pulseaudio,
+#custom-volume,
 #pulseaudio-slider,
 #taskbar,
 #temperature,

@@ -13,8 +13,13 @@ if [ "${STATE}" == "2" ]; then
 elif [ "${STATE}" == "1" ]; then
 	hyprctl keyword decoration:blur:size 12
 	hyprctl keyword decoration:blur:passes 4
- 	notify-send -e -u low -i "$notif/ja.png" " Full Blur"
+	echo "windowrule = opacity 1.0 override 1.0 override, match:class .*" > "$HOME/.config/hypr/OpaqueOverride.conf"
+	hyprctl reload
+ 	notify-send -e -u low -i "$notif/ja.png" " Full Blur (Opaque)"
 else
+	echo "" > "$HOME/.config/hypr/OpaqueOverride.conf"
+	hyprctl reload
+	sleep 0.5
 	hyprctl keyword decoration:blur:size 5
 	hyprctl keyword decoration:blur:passes 2
   	notify-send -e -u low -i "$notif/ja.png" " Normal Blur"

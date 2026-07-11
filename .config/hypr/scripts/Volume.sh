@@ -73,7 +73,7 @@ inc_volume() {
     if [ "$(pamixer --get-mute)" == "true" ]; then
         toggle_mute
     else
-        pamixer -i 8 --allow-boost --set-limit $HW_MAX && notify_user
+        pamixer -i 5 --allow-boost --set-limit $HW_MAX && notify_user
     fi
 }
 
@@ -82,7 +82,7 @@ dec_volume() {
     if [ "$(pamixer --get-mute)" == "true" ]; then
         toggle_mute
     else
-        pamixer -d 8 --allow-boost --set-limit $HW_MAX && notify_user
+        pamixer -d 5 --allow-boost --set-limit $HW_MAX && notify_user
     fi
 }
 
@@ -163,7 +163,7 @@ inc_mic_volume() {
     if [ "$(pamixer --default-source --get-mute)" == "true" ]; then
         toggle_mic
     else
-        pamixer --default-source -i 8 --allow-boost --set-limit $HW_MAX && notify_mic_user
+        pamixer --default-source -i 5 --allow-boost --set-limit $HW_MAX && notify_mic_user
     fi
 }
 
@@ -172,7 +172,7 @@ dec_mic_volume() {
     if [ "$(pamixer --default-source --get-mute)" == "true" ]; then
         toggle_mic
     else
-        pamixer --default-source -d 8 --allow-boost --set-limit $HW_MAX && notify_mic_user
+        pamixer --default-source -d 5 --allow-boost --set-limit $HW_MAX && notify_mic_user
     fi
 }
 
@@ -186,7 +186,15 @@ get_waybar_volume() {
         echo '{"text": "󰖁 Muted", "tooltip": "Muted", "class": "muted"}'
     else
         local icon=""
-        if [[ "$ui_volume" -le 30 ]]; then icon=""; elif [[ "$ui_volume" -le 60 ]]; then icon="󰕾"; fi
+        local sink_info
+        sink_info=$(pamixer --get-default-sink 2>/dev/null)
+        
+        if echo "$sink_info" | grep -qiE "bluez|headphone|headset|earphone|buds"; then
+            icon=""
+        else
+            if [[ "$ui_volume" -le 30 ]]; then icon=""; elif [[ "$ui_volume" -le 60 ]]; then icon="󰕾"; fi
+        fi
+        
         echo "{\"text\": \"$icon $ui_volume%\", \"tooltip\": \"Volume: $ui_volume%\", \"class\": \"unmuted\"}"
     fi
 }

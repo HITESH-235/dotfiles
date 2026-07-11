@@ -2,7 +2,7 @@
 
 /* Global font size and compact height - consistent across all themes */
 * {
-    font-size: 15px;
+    font-size: 14px;
     padding-top: 0px;
     padding-bottom: 0px;
     margin-top: 0px;
@@ -24,19 +24,48 @@ window#waybar {
     padding-top: 0px;
     padding-bottom: 0px;
     min-height: 0px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#backlight:hover, #battery:hover, #bluetooth:hover, #clock:hover, #cpu:hover, #disk:hover, #idle_inhibitor:hover, #keyboard-state:hover, #memory:hover, #mode:hover, #mpris:hover, #network:hover, #power-profiles-daemon:hover, #pulseaudio:hover, #custom-volume:hover, #custom-mic:hover, #temperature:hover, #tray:hover, #window:hover, #wireplumber:hover, #custom-menu:hover, #custom-power:hover, #custom-weather:hover {
+    background-color: rgba(255, 255, 255, 0.15);
 }
 /* Tighter spacing for workspaces */
-#workspaces button {
-    padding-left: 1px;
-    padding-right: 1px;
-    margin-left: -1px;
-    margin-right: -1px;
+#workspaces button,
+#workspaces-rw button,
+#rw button,
+.workspaces button,
+window#waybar workspaces button,
+window#waybar #workspaces button,
+window#waybar #workspaces-rw button {
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: rgba(255, 255, 255, 0.001);
+    transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.682);
 }
+
+#workspaces button:hover,
+#workspaces-rw button:hover,
+#rw button:hover,
+.workspaces button:hover,
+window#waybar workspaces button:hover,
+window#waybar #workspaces button:hover,
+window#waybar #workspaces-rw button:hover {
+    border-radius: 10px;
+    background-color: #313244;
+    color: #fab387;
+    padding-left: 2px;
+    padding-right: 2px;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
 
 #workspaces {
     padding-left: 8px;
     padding-right: 0px;
-    margin-left: 4px;
+    margin-left: -4px;
     margin-right: -6px;
 }
 
@@ -94,7 +123,7 @@ window#waybar {
 }
 
 #idle_inhibitor {
-    padding-left: 2px;
+    padding-left: 6px;
     padding-right: 2px;
     margin-left: 0px;
     margin-right: 0px;
@@ -106,7 +135,7 @@ window#waybar {
 }
 
 #custom-power {
-    margin-left: 2px;
+    margin-left: 0px;
 }
 
 #custom-playerctl.paused,
@@ -118,4 +147,61 @@ window#waybar {
     margin: 0px;
     min-width: 0px;
     opacity: 0;
+}
+
+#custom-swaync {
+    margin-right: -6px;
+    padding-right: 2px;
+}
+
+/* Force standard colors managed by wallust and prevent dimming */
+#power-profiles-daemon, 
+#custom-asus_profile {
+    color: @foreground;
+    opacity: 1.0;
+}
+
+#custom-volume {
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-right: 8px;
+    min-width: 50px;
+    opacity: 1.0;
+}
+
+/* Standardize the custom profile/power icon (Omnitrix) across all themes */
+#custom-power {
+    font-size: 20px;
+    background-image: url("/home/hit235/Downloads/Omnitrix.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 17px 17px;
+    color: transparent;
+    min-width: 23px;
+    min-height: 23px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 2px;
+    margin-left: -5px;
+    opacity: 1.0;
+}
+
+/* Premium Glassmorphism Tooltip Styling */
+tooltip, #tooltip {
+    background-color: rgba(17, 17, 18, 0.94);
+    color: #F2FAFD;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 8px 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+tooltip label, #tooltip label {
+    color: #F2FAFD;
+    background: transparent;
+    font-size: 14px;
 }

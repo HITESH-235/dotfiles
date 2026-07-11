@@ -103,6 +103,7 @@
     "format": " {:%I:%M %p}", // AM PM format
     //"format": " {:%H:%M:%S}",// 24H
 	"format-alt": " {:%H:%M   %Y, %d %B, %A}",
+	"tooltip": true,
 	"tooltip-format": "<tt><small>{calendar}</small></tt>",
 	"calendar": {
 		"mode": "year",
@@ -174,7 +175,7 @@
 	"path": "/",
 	//"format-alt-click": "click",
 	"format": "󰋊 {percentage_used}%",
-	//"tooltip": true,
+	"tooltip": true,
 	"tooltip-format": "{used} used out of {total} on {path} ({percentage_used}%)",
 },
 
@@ -277,6 +278,7 @@
 	"format-wifi": "{icon}",
 	"format-ethernet": "󰌘",
 	"format-disconnected": "󰌙",
+	"tooltip": true,
 	"tooltip-format": "{ipaddr}  {bandwidthUpBits}  {bandwidthDownBits}",
 	"format-linked": "󰈁 {ifname} (No IP)",
 	"tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
@@ -342,6 +344,7 @@
 	"on-click-right": "pavucontrol -t 3",
 	"on-scroll-up": "$HOME/.config/hypr/scripts/Volume.sh --inc",
 	"on-scroll-down": "$HOME/.config/hypr/scripts/Volume.sh --dec",
+	"tooltip": true,
 	"tooltip-format": "{icon} {desc} | {volume}%",
 	"smooth-scrolling-threshold": 1,
 },
