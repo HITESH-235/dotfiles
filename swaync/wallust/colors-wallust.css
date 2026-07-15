@@ -1,12 +1,25 @@
-/* ---- 💫 https://github.com/JaKooLit 💫 ---- */  
- /* wallust template - colors-swaync */
+/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
+/* wallust template - colors-swaync */
 
-@define-color text #F0DBAC;
-@define-color background rgba(23,19,29,0.25);
-@define-color background-alt #17131D;
-@define-color cursor #898367;
-@define-color hovered #7B6438;
-@define-color button-background #9F710D;
-@define-color button-active #1A2119;
-@define-color border #170B3C;
-@define-color urgent #E1C37F;
+@define-color foreground #BFE5F8;
+@define-color background #211B29;
+@define-color background-alt rgba(33,27,41,0.35);
+@define-color background-solid rgba(33,27,41,0.85);
+@define-color cursor #A586AF;
+
+@define-color color0 #484151;
+@define-color color1 #230B42;
+@define-color color2 #681D4C;
+@define-color color3 #6D166B;
+@define-color color4 #A42E55;
+@define-color color5 #A42E55;
+@define-color color6 #3688B0;
+@define-color color7 #9BD2ED;
+@define-color color8 #6D93A6;
+@define-color color9 #2E0E59;
+@define-color color10 #8A2766;
+@define-color color11 #921D8F;
+@define-color color12 #DB3D71;
+@define-color color13 #DB3D71;
+@define-color color14 #48B6EB;
+@define-color color15 #9BD2ED;

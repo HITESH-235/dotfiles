@@ -1,64 +1,86 @@
-/* Premium Wallpaper-Cohesive Glassmorphism Theme (Custom Dark Wallpaper Color) */
+/* ── Black & White Minimal Theme ── */
 
 :root {
   --border-radius: 16px;
-  --cc-bg: transparent; /* Fully transparent panel container */
-  --wallpaper-base: 23, 19, 29; /* Dark color picked from active wallpaper */
-  --widget-background: rgba(var(--wallpaper-base), 0.85); /* Frosted wallpaper dark glass for main widgets */
-  --container-background: rgba(var(--wallpaper-base), 0.35); /* Translucent container glass */
-  --card-background: rgba(var(--wallpaper-base), 0.85); /* Opaque card glass */
-  --border-color: rgba(255, 255, 255, 0.08); /* Ultra thin clean border */
-  --accent-white: rgba(255, 255, 255, 0.95);
-  --text-dim: rgba(255, 255, 255, 0.75);
+  --border: none;
+  --notification-shadow: none;
+  --noti-border-color: transparent;
+  --noti-bg: 0, 0, 0;
+  --noti-bg-alpha: 0.55;
+  --noti-bg-hover: rgba(255, 255, 255, 0.08);
+  --noti-bg-focus: transparent;
 }
 
+/* ── Control Center Panel ── */
 .control-center {
   border-radius: 16px;
-  background-color: var(--cc-bg);
-  border: 1px solid var(--border-color);
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   margin: 8px;
 }
 
+/* Remove default GTK blue focus outlines globally */
+*:focus {
+  outline: none;
+  box-shadow: none;
+}
+
 .control-center-list-placeholder {
-  padding: var(--border-radius);
-  opacity: 0.5;
+  padding: 16px;
+  opacity: 0.4;
 }
 
+/* ── All Widgets (DND, Media) ── */
 .widgets > .widget {
-  background-color: var(--widget-background);
-  border-radius: var(--border-radius);
+  background-color: rgba(10, 10, 10, 0.95);
+  border-radius: 16px;
   padding: 8px 12px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8);
 }
 
-/* Tighter vertical spacing on notification groups (Outer transparent grey box) */
+/* ── Notification Group Container ── */
 .notification-group {
-  border-radius: var(--border-radius);
+  border-radius: 16px;
   padding: 6px;
-  background-color: rgba(50, 50, 50, 0.70);
-  border: 1px solid rgba(255, 255, 255, 0.13);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  background-color: rgba(18, 18, 18, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
   margin: 0 12px;
   min-width: 396px;
 }
 
 .notification-row {
   margin: 3px 0;
+  min-width: 0;
+  outline: none;
 }
 
-/* Individual notification card (Slightly darker grey with strong black shadow) */
+.notification-row:focus {
+  outline: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Override default system CSS padding that causes width gap */
+.notification-row .notification-background {
+  padding: 0;
+  margin: 0;
+}
+
+/* ── Individual Notification Card ── */
 .notification {
+  margin: 0;
   padding: 6px 10px;
   border-radius: 10px;
-  background-color: rgba(60, 60, 60, 0.92);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(30, 30, 30, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   color: #ffffff;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.9), 0 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .notification:hover {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(55, 55, 55, 0.98);
 }
 
 .notification-default-action {
@@ -67,34 +89,45 @@
   border-style: none;
   background-color: transparent;
   box-shadow: none;
+  min-width: 0;
 }
 
-/* Style action buttons inside notifications (e.g. Open, Delete) to look like sleek glass pills */
+/* ── Notification Action Buttons (Open / Delete etc.) ── */
 .notification-action {
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-color);
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notification-action button {
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 12px;
-  color: var(--accent-white);
+  color: rgba(255, 255, 255, 0.85);
   padding: 4px 10px;
   margin: 4px;
   transition: all 0.2s ease;
+  box-shadow: none;
 }
 
-.notification-action:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+.notification-action button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   color: #ffffff;
 }
 
-/* MPRIS player widget wrapper - More specific class selector overrides default widget background */
+
+/* ── MPRIS Widget Wrapper ── */
 .widgets > .widget.widget-mpris {
-  background-color: var(--widget-background); /* Match DND widget / notification cards */
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--border-radius);
+  background-color: rgba(10, 10, 10, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
   padding: 8px;
 }
 
-/* 1. Completely hide and collapse carousel navigation buttons (prev/next) */
+/* Hide carousel prev/next nav buttons */
 .widget-mpris button,
 .widget-mpris button image,
 .widget-mpris button label {
@@ -111,7 +144,7 @@
   box-shadow: none;
 }
 
-/* 2. Restore and style ONLY the control buttons inside the player card */
+/* Restore only the player control buttons */
 .widget-mpris-player button {
   min-width: 26px;
   min-height: 26px;
@@ -135,11 +168,11 @@
 }
 
 .widget-mpris-player button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.12);
   border-radius: 50%;
 }
 
-/* 3. Completely hide and collapse carousel indicator dots */
+/* Hide carousel indicator dots */
 .widget-mpris carouselindicatordots,
 .widget-mpris carouselindicatordots * {
   min-width: 0;
@@ -152,7 +185,7 @@
   background-image: none;
 }
 
-/* 4. Style the player card to fill the full width of the space and be flatter */
+/* Player card fills container cleanly */
 .widgets > .widget.widget-mpris .widget-mpris-player {
   box-shadow: none;
   border-style: none;
@@ -167,21 +200,31 @@
   margin: 0;
 }
 
-/* Limit MPRIS album art size to flatten the widget */
+/* Album art */
 .widget-mpris-album-art {
   border-radius: 8px;
   min-width: 48px;
   min-height: 48px;
 }
 
-/* Compact widget spacing */
+/* ── DND & Title ── */
 .widget-dnd,
 .widget-title {
   padding: 2px 0;
   color: #ffffff;
 }
 
-/* DND switch */
+.widget-dnd > switch {
+  min-width: 40px;
+  min-height: 20px;
+  font-size: 0;
+}
+
+.widget-dnd > switch slider {
+  min-width: 16px;
+  min-height: 16px;
+}
+
 .widget-dnd > switch:checked {
   background-color: #ffffff;
 }
@@ -189,31 +232,30 @@
   background-color: #000000;
 }
 
-/* Title clear-all button */
 .widget-title > button:hover {
   background-color: #ffffff;
   color: #000000;
 }
 
-/* Close button */
 .close-button:hover {
   color: #ffffff;
 }
 
-/* Summary & body text */
+/* ── Text ── */
 .summary {
   color: #ffffff;
   font-weight: 800;
 }
 .body {
-  color: rgba(255, 255, 255, 0.95);
-  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
 }
 .time {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 11px;
 }
 
-/* Smaller notification icons — constrain ALL image types */
+/* ── Notification Icons ── */
 .notification-content image,
 .notification image,
 .image {
@@ -222,40 +264,79 @@
   margin: 2px 12px 2px 2px;
 }
 
-/* ── Compact popup (floating) notifications ── */
+/* ── Floating / Popup Notifications — Glassmorphism ── */
 .floating-notifications {
   margin: 4px;
 }
 
-.floating-notifications .notification {
-  padding: 4px 8px;
-  border-radius: var(--border-radius);
+.floating-notifications .notification-row {
+  border: none;
+  outline: none;
+  background: transparent;
+  box-shadow: none;
+  margin: 6px 0;
+  padding: 0;
+}
+
+.floating-notifications .notification-row .notification-background {
+  border: none;
+  outline: none;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Full specificity to override system default border: var(--border) */
+.floating-notifications .notification-row .notification-background .notification {
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: rgba(25, 25, 25, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.floating-notifications .notification-row .notification-background .notification:hover {
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .floating-notifications .notification-default-action {
   margin: 0;
-  padding: 2px 4px;
+  padding: 0;
+  border-style: none;
+  background-color: transparent;
+  box-shadow: none;
+  min-width: 0;
 }
 
-/* Shrink popup notification icon */
 .floating-notifications .notification-content image {
-  min-width: 24px;
-  min-height: 24px;
+  min-width: 28px;
+  min-height: 28px;
 }
 
-/* Shrink close button on popups */
 .floating-notifications .close-button {
   min-width: 20px;
   min-height: 20px;
   padding: 1px;
   margin: 2px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 100%;
+  color: #ffffff;
 }
 
-/* Tighten body text spacing in popups */
+.floating-notifications .close-button:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
 .floating-notifications .body {
   margin-top: 0;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .floating-notifications .summary {
   margin: 0;
+  color: #ffffff;
+  font-weight: 700;
 }
