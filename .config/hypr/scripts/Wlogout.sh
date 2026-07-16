@@ -15,11 +15,11 @@ B_1080=200
 A_720=50
 B_720=50
 
-# Check if snmenu is already running
-if pgrep -x "snmenu" > /dev/null; then
-    pkill -x "snmenu"
+# Check if wlogout is already running
+if pgrep -x "wlogout" > /dev/null; then
+    pkill -x "wlogout"
     exit 0
 fi
 
-# Run snmenu
-/home/hit235/.local/bin/snmenu &
+# Run wlogout
+wlogout &

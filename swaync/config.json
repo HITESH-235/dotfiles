@@ -34,12 +34,20 @@
   "script-fail-notify": true,
 
   "widgets": [
+    "volume",
+    "backlight",
     "inhibitors",
     "dnd",
     "mpris",
     "notifications"
   ],
   "widget-config": {
+    "volume": {
+      "label": "󰕾"
+    },
+    "backlight": {
+      "label": "󰃠"
+    },
     "notifications": {
       "vexpand": false
     },

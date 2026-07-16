@@ -41,11 +41,9 @@
 
 /* ── Notification Group Container ── */
 .notification-group {
-  border-radius: 16px;
-  padding: 6px;
-  background-color: rgba(18, 18, 18, 0.92);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
   margin: 0 12px;
   min-width: 396px;
 }
@@ -226,15 +224,15 @@
 }
 
 .widget-dnd > switch:checked {
-  background-color: #ffffff;
+  background-color: #88C0D0;
 }
 .widget-dnd > switch:checked slider {
-  background-color: #000000;
+  background-color: #111111;
 }
 
 .widget-title > button:hover {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #88C0D0;
+  color: #111111;
 }
 
 .close-button:hover {
@@ -243,7 +241,7 @@
 
 /* ── Text ── */
 .summary {
-  color: #ffffff;
+  color: #88C0D0;
   font-weight: 800;
 }
 .body {
@@ -339,4 +337,40 @@
   margin: 0;
   color: #ffffff;
   font-weight: 700;
+}
+
+/* ── Volume and Backlight Widget Styling ── */
+.widget-volume,
+.widget-backlight {
+  background-color: rgba(10, 10, 10, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 12px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.widget-volume scale,
+.widget-backlight scale {
+  min-height: 12px;
+  margin: 0 10px;
+}
+
+.widget-volume scale trough highlight,
+.widget-backlight scale trough highlight {
+  background-color: #88C0D0;
+  border-radius: 6px;
+}
+
+.widget-volume scale trough,
+.widget-backlight scale trough {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  min-height: 10px;
+}
+
+.widget-volume label,
+.widget-backlight label {
+  font-size: 16px;
+  color: #88C0D0;
 }

@@ -1,0 +1,62 @@
+[
+  {
+    "label": "lock",
+    "action": "$HOME/.config/hypr/scripts/LockScreen.sh",
+    "text": "Lock",
+    "keybind": "l",
+    "color": "#000000",
+    "hover_color": "#404040",
+    "icon_char": "󰌾",
+    "show_label": false
+  },
+  {
+    "label": "reboot",
+    "action": "systemctl reboot",
+    "text": "Reboot",
+    "keybind": "r",
+    "color": "#08182B",
+    "hover_color": "#404040",
+    "icon_char": "󰜉",
+    "show_label": false
+  },
+  {
+    "label": "shutdown",
+    "action": "systemctl poweroff",
+    "text": "Shutdown",
+    "keybind": "s",
+    "color": "#000000",
+    "hover_color": "#404040",
+    "icon_char": "󰐥",
+    "show_label": false
+  },
+  {
+    "label": "logout",
+    "action": "hyprctl dispatch exit 0",
+    "text": "Logout",
+    "keybind": "e",
+    "color": "#08182B",
+    "hover_color": "#404040",
+    "icon_char": "󰍃",
+    "show_label": false
+  },
+  {
+    "label": "suspend",
+    "action": "systemctl suspend",
+    "text": "Suspend",
+    "keybind": "u",
+    "color": "#000000",
+    "hover_color": "#404040",
+    "icon_char": "󰤄",
+    "show_label": false
+  },
+  {
+    "label": "hibernate",
+    "action": "systemctl hibernate",
+    "text": "Hibernate",
+    "keybind": "h",
+    "color": "#08182B",
+    "hover_color": "#404040",
+    "icon_char": "󰒲",
+    "show_label": false
+  }
+]

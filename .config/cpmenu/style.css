@@ -1,0 +1,29 @@
+/* ---- 💫 SNMenu GTK CSS Stylesheet 💫 ---- */
+
+* {
+    background-image: none;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+window {
+    background-color: black;
+}
+
+button {
+    border-radius: 0;
+    border: none;
+    outline: none;
+    font-family: "Inter", "Satoshi", "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 24pt;
+    font-weight: bold;
+    color: white;
+    background-color: transparent;
+}
+
+button:focus,
+button:active,
+button:hover {
+    outline-style: none;
+    background-color: transparent;
+}

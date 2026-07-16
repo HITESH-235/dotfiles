@@ -216,12 +216,12 @@
 	"tooltip": false
 },
 "custom/separator#dot-line": {
-	"format": "│",
+	"format": "",
 	"interval": "once",
 	"tooltip": false
 },
 "custom/separator#line": {
-	"format": "|",
+	"format": "",
 	"interval": "once",
 	"tooltip": false
 },

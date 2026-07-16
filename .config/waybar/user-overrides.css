@@ -2,7 +2,7 @@
 
 /* Global font size and compact height - consistent across all themes */
 * {
-    font-size: 14px;
+    font-size: 13px;
     padding-top: 0px;
     padding-bottom: 0px;
     margin-top: 0px;
@@ -204,4 +204,9 @@ tooltip label, #tooltip label {
     color: #F2FAFD;
     background: transparent;
     font-size: 14px;
+}
+
+/* Adjust bluetooth icon size to match other icons visually */
+#bluetooth {
+    font-size: 17px;
 }
