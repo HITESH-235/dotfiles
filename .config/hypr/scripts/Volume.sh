@@ -214,6 +214,14 @@ case "$1" in
 "--get")
   get_volume
   ;;
+"--set")
+  val=$(( $2 * HW_MAX / 100 ))
+  pamixer --set-volume "$val" --allow-boost && notify_user
+  ;;
+"--get-scaled")
+  val=$(pamixer --get-volume)
+  echo $(( val * 100 / HW_MAX ))
+  ;;
 "--inc")
   inc_volume
   ;;
