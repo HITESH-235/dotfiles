@@ -34,7 +34,7 @@
   "script-fail-notify": true,
 
   "widgets": [
-    "volume",
+    "slider#volume",
     "backlight",
     "inhibitors",
     "dnd",
@@ -42,8 +42,12 @@
     "notifications"
   ],
   "widget-config": {
-    "volume": {
-      "label": "󰕾"
+    "slider#volume": {
+      "label": "󰕾",
+      "min": 0,
+      "max": 100,
+      "cmd_setter": "pamixer --set-volume $(( $value * 150 / 100 )) --allow-boost",
+      "cmd_getter": "echo $(( $(pamixer --get-volume) * 100 / 150 ))"
     },
     "backlight": {
       "label": "󰃠"

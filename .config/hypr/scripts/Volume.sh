@@ -8,7 +8,7 @@ sDIR="$HOME/.config/hypr/scripts"
 # Max hardware volume (corresponds to 100% in UI)
 HW_MAX=150
 
-# Get Volume (raw 0-150%)
+# Get Volume (scaled: 0-150 hw -> 0-100 ui)
 get_volume() {
     if [[ "$(pamixer --get-mute)" == "true" ]]; then
         echo "Muted"
@@ -18,10 +18,15 @@ get_volume() {
     local hw_volume
     hw_volume=$(pamixer --get-volume)
     
-    if [[ "$hw_volume" -eq 0 ]]; then
+    local ui_volume
+    ui_volume=$(( hw_volume * 100 / HW_MAX ))
+    # Clamp to 100
+    (( ui_volume > 100 )) && ui_volume=100
+    
+    if [[ "$ui_volume" -eq 0 ]]; then
         echo "Muted"
     else
-        echo "$hw_volume %"
+        echo "$ui_volume %"
     fi
 }
 
@@ -35,9 +40,9 @@ get_icon() {
     local ui_volume
     ui_volume=$(get_volume | cut -d' ' -f1)
     
-    if [[ "$ui_volume" -le 45 ]]; then
+    if [[ "$ui_volume" -le 30 ]]; then
         echo "$iDIR/volume-low.png"
-    elif [[ "$ui_volume" -le 90 ]]; then
+    elif [[ "$ui_volume" -le 60 ]]; then
         echo "$iDIR/volume-mid.png"
     else
         echo "$iDIR/volume-high.png"
@@ -63,7 +68,7 @@ notify_user() {
     pkill -RTMIN+8 waybar
 }
 
-# Increase Volume (step 5% raw units)
+# Increase Volume (step ~5% of UI = 8 raw units out of 150)
 inc_volume() {
     if [ "$(pamixer --get-mute)" == "true" ]; then
         toggle_mute
@@ -111,7 +116,7 @@ get_mic_icon() {
     fi
 }
 
-# Get Microphone Volume (raw 0-150%)
+# Get Microphone Volume (scaled: 0-150 hw -> 0-100 ui)
 get_mic_volume() {
     if [[ "$(pamixer --default-source --get-mute)" == "true" ]]; then
         echo "Muted"
@@ -121,10 +126,14 @@ get_mic_volume() {
     local hw_volume
     hw_volume=$(pamixer --default-source --get-volume)
     
-    if [[ "$hw_volume" -eq 0 ]]; then
+    local ui_volume
+    ui_volume=$(( hw_volume * 100 / HW_MAX ))
+    (( ui_volume > 100 )) && ui_volume=100
+    
+    if [[ "$ui_volume" -eq 0 ]]; then
         echo "Muted"
     else
-        echo "$hw_volume %"
+        echo "$ui_volume %"
     fi
 }
 

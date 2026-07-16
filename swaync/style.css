@@ -341,6 +341,7 @@
 
 /* ── Volume and Backlight Widget Styling ── */
 .widget-volume,
+.widget-slider,
 .widget-backlight {
   background-color: rgba(10, 10, 10, 0.95);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -351,18 +352,21 @@
 }
 
 .widget-volume scale,
+.widget-slider scale,
 .widget-backlight scale {
   min-height: 12px;
   margin: 0 10px;
 }
 
 .widget-volume scale trough highlight,
+.widget-slider scale trough highlight,
 .widget-backlight scale trough highlight {
   background-color: #88C0D0;
   border-radius: 6px;
 }
 
 .widget-volume scale trough,
+.widget-slider scale trough,
 .widget-backlight scale trough {
   background-color: rgba(255, 255, 255, 0.15);
   border-radius: 6px;
@@ -370,6 +374,7 @@
 }
 
 .widget-volume label,
+.widget-slider label,
 .widget-backlight label {
   font-size: 16px;
   color: #88C0D0;
