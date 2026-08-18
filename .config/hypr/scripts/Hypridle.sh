@@ -13,10 +13,14 @@ if [[ "$1" == "status" ]]; then
     fi
 elif [[ "$1" == "toggle" ]]; then
     if pgrep -x "$PROCESS" >/dev/null; then
-        pkill "$PROCESS"
+        systemctl --user stop hypridle.service hypridle-battery.service || pkill "$PROCESS"
     else
-        "$PROCESS" >/dev/null 2>&1 &
-        disown
+        AC_STATUS=$(cat /sys/class/power_supply/AC0/online 2>/dev/null)
+        if [ "$AC_STATUS" -eq 1 ]; then
+            systemctl --user start hypridle.service || { hypridle >/dev/null 2>&1 & disown; }
+        else
+            systemctl --user start hypridle-battery.service || { hypridle -c "$HOME/.config/hypr/hypridle_battery.conf" >/dev/null 2>&1 & disown; }
+        fi
     fi
 else
     echo "Usage: $0 {status|toggle}"

@@ -5,7 +5,7 @@
     "text": "Lock",
     "keybind": "l",
     "color": "#000000",
-    "hover_color": "#404040",
+    "hover_color": "#22C55E",
     "icon_char": "󰌾",
     "show_label": false
   },
@@ -14,8 +14,8 @@
     "action": "systemctl reboot",
     "text": "Reboot",
     "keybind": "r",
-    "color": "#08182B",
-    "hover_color": "#404040",
+    "color": "#1E40AF",
+    "hover_color": "#22C55E",
     "icon_char": "󰜉",
     "show_label": false
   },
@@ -25,7 +25,7 @@
     "text": "Shutdown",
     "keybind": "s",
     "color": "#000000",
-    "hover_color": "#404040",
+    "hover_color": "#22C55E",
     "icon_char": "󰐥",
     "show_label": false
   },
@@ -34,8 +34,8 @@
     "action": "hyprctl dispatch exit 0",
     "text": "Logout",
     "keybind": "e",
-    "color": "#08182B",
-    "hover_color": "#404040",
+    "color": "#1E40AF",
+    "hover_color": "#22C55E",
     "icon_char": "󰍃",
     "show_label": false
   },
@@ -45,7 +45,7 @@
     "text": "Suspend",
     "keybind": "u",
     "color": "#000000",
-    "hover_color": "#404040",
+    "hover_color": "#22C55E",
     "icon_char": "󰤄",
     "show_label": false
   },
@@ -54,8 +54,8 @@
     "action": "systemctl hibernate",
     "text": "Hibernate",
     "keybind": "h",
-    "color": "#08182B",
-    "hover_color": "#404040",
+    "color": "#1E40AF",
+    "hover_color": "#22C55E",
     "icon_char": "󰒲",
     "show_label": false
   }

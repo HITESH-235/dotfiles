@@ -1,0 +1,75 @@
+{
+  "layer": "top",
+  "position": "left",
+  "width": 54,
+  "exclusive": true,
+  "fixed-center": true,
+  "passthrough": false,
+  "spacing": 4,
+  "margin-top": 10,
+  "margin-bottom": 10,
+  "margin-left": 6,
+  "margin-right": 0,
+  
+  "modules-left": [
+  ],
+  
+  "modules-center": [
+    "custom/pin_zen",
+    "custom/pin_chrome",
+    "custom/pin_chatgpt",
+    "custom/pin_ytmusic",
+    "custom/pin_leetcode",
+    "wlr/taskbar"
+  ],
+  
+  "modules-right": [
+    "custom/pin_bin"
+  ],
+
+  "custom/pin_zen": {
+    "format": "",
+    "tooltip-format": "Zen Browser",
+    "on-click": "zen-browser"
+  },
+
+  "custom/pin_chrome": {
+    "format": "",
+    "tooltip-format": "Google Chrome",
+    "on-click": "google-chrome-stable"
+  },
+
+  "custom/pin_chatgpt": {
+    "format": "󰭹",
+    "tooltip-format": "ChatGPT",
+    "on-click": "xdg-open https://chatgpt.com"
+  },
+
+  "custom/pin_ytmusic": {
+    "format": "󰎆",
+    "tooltip-format": "YouTube Music",
+    "on-click": "xdg-open https://music.youtube.com"
+  },
+
+  "custom/pin_leetcode": {
+    "format": "",
+    "tooltip-format": "LeetCode",
+    "on-click": "xdg-open https://leetcode.com"
+  },
+  
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 26,
+    "icon-theme": "Flat-Remix-Blue-Dark",
+    "spacing": 8,
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close"
+  },
+  
+  "custom/pin_bin": {
+    "format": "",
+    "tooltip-format": "Trash Bin",
+    "on-click": "thunar trash:///"
+  }
+}

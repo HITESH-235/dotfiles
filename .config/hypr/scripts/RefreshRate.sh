@@ -63,7 +63,15 @@ if [ "$AC_STATUS" -eq 1 ]; then
         monitor_cmd="$MONITOR,$base_res@120.0,$POS,$SCALE"
     fi
     run_cmd hyprctl keyword monitor "$monitor_cmd"
-    run_cmd notify-send -t 2000 -i "power-plug" "Power Connected" "Switching to 120Hz" || true
+    run_cmd hyprctl keyword decoration:blur:enabled true
+    run_cmd hyprctl keyword decoration:shadow:enabled true
+    run_cmd hyprctl keyword decoration:active_opacity 1.0
+    run_cmd hyprctl keyword decoration:inactive_opacity 0.95
+    
+    run_cmd systemctl --user stop hypridle-battery.service
+    run_cmd systemctl --user start hypridle.service
+    
+    run_cmd notify-send -t 2000 -i "power-plug" "Power Connected" "Switching to 120Hz and enabling full effects" || true
 else
     # ON BATTERY: Drop to 60Hz (keep user's resolution, position, scale, and options)
     if [ -n "$OPTIONS" ]; then
@@ -72,5 +80,13 @@ else
         monitor_cmd="$MONITOR,$base_res@60,$POS,$SCALE"
     fi
     run_cmd hyprctl keyword monitor "$monitor_cmd"
-    run_cmd notify-send -t 2000 -i "battery-low" "Power Disconnected" "Switching to 60Hz to save battery" || true
+    run_cmd hyprctl keyword decoration:blur:enabled false
+    run_cmd hyprctl keyword decoration:shadow:enabled false
+    run_cmd hyprctl keyword decoration:active_opacity 1.0
+    run_cmd hyprctl keyword decoration:inactive_opacity 1.0
+    
+    run_cmd systemctl --user stop hypridle.service
+    run_cmd systemctl --user start hypridle-battery.service
+    
+    run_cmd notify-send -t 2000 -i "battery-low" "Power Disconnected" "Switching to 60Hz and disabling effects to save battery" || true
 fi

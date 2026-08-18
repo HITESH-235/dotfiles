@@ -1,7 +1,7 @@
 /* ── Black & White Minimal Theme ── */
 
 :root {
-  --border-radius: 16px;
+  --border-radius: 24px;
   --border: none;
   --notification-shadow: none;
   --noti-border-color: transparent;
@@ -11,11 +11,17 @@
   --noti-bg-focus: transparent;
 }
 
+window,
+window decoration {
+  box-shadow: none !important;
+  background: transparent;
+}
+
 /* ── Control Center Panel ── */
 .control-center {
-  border-radius: 16px;
-  background-color: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   margin: 8px;
 }
 
@@ -33,10 +39,12 @@
 /* ── All Widgets (DND, Media) ── */
 .widgets > .widget {
   background-color: rgba(10, 10, 10, 0.95);
-  border-radius: 16px;
+  border-radius: 24px;
   padding: 8px 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8);
+  box-shadow: none;
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
 
 /* ── Notification Group Container ── */
@@ -49,7 +57,7 @@
 }
 
 .notification-row {
-  margin: 3px 0;
+  margin: 5px 0;
   min-width: 0;
   outline: none;
 }
@@ -70,15 +78,16 @@
 .notification {
   margin: 0;
   padding: 6px 10px;
-  border-radius: 10px;
-  background-color: rgba(30, 30, 30, 0.98);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  background-color: rgba(50, 50, 50, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   color: #ffffff;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.9), 0 2px 4px rgba(0, 0, 0, 0.6);
+  box-shadow: none;
+  transition: background-color 0.2s ease;
 }
 
 .notification:hover {
-  background-color: rgba(55, 55, 55, 0.98);
+  background-color: rgba(70, 70, 70, 0.80);
 }
 
 .notification-default-action {
@@ -121,7 +130,7 @@
 .widgets > .widget.widget-mpris {
   background-color: rgba(10, 10, 10, 0.95);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
+  border-radius: 24px;
   padding: 8px;
 }
 
@@ -262,7 +271,11 @@
   margin: 2px 12px 2px 2px;
 }
 
-/* ── Floating / Popup Notifications — Glassmorphism ── */
+.floating-notifications,
+.floating-notifications * {
+  box-shadow: none !important;
+}
+
 .floating-notifications {
   margin: 4px;
 }
@@ -271,8 +284,7 @@
   border: none;
   outline: none;
   background: transparent;
-  box-shadow: none;
-  margin: 6px 0;
+  margin: 4px 0;
   padding: 0;
 }
 
@@ -280,7 +292,6 @@
   border: none;
   outline: none;
   background: transparent;
-  box-shadow: none;
   padding: 0;
   margin: 0;
 }
@@ -288,15 +299,15 @@
 /* Full specificity to override system default border: var(--border) */
 .floating-notifications .notification-row .notification-background .notification {
   padding: 6px 10px;
-  border-radius: 10px;
-  background: rgba(25, 25, 25, 0.96);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  background: rgba(20, 20, 20, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   color: #ffffff;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.6);
+  transition: background 0.2s ease;
 }
 
 .floating-notifications .notification-row .notification-background .notification:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(35, 35, 35, 0.80);
 }
 
 .floating-notifications .notification-default-action {
@@ -345,7 +356,7 @@
 .widget-backlight {
   background-color: rgba(10, 10, 10, 0.95);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
+  border-radius: 24px;
   padding: 12px;
   margin-top: 4px;
   margin-bottom: 4px;

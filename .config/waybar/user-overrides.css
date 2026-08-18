@@ -2,7 +2,7 @@
 
 /* Global font size and compact height - consistent across all themes */
 * {
-    font-size: 13px;
+    font-size: 14px;
     padding-top: 0px;
     padding-bottom: 0px;
     margin-top: 0px;
@@ -13,6 +13,7 @@ window#waybar {
     min-height: 0px;
     padding-top: 0px;
     padding-bottom: 0px;
+    border-radius: 0px;
 }
 
 .modules-left, .modules-center, .modules-right {
@@ -171,7 +172,7 @@ window#waybar #workspaces-rw button:hover {
 
 /* Standardize the custom profile/power icon (Omnitrix) across all themes */
 #custom-power {
-    font-size: 20px;
+    font-size: 22px;
     background-image: url("/home/hit235/Downloads/Omnitrix.png");
     background-repeat: no-repeat;
     background-position: center;
@@ -208,5 +209,5 @@ tooltip label, #tooltip label {
 
 /* Adjust bluetooth icon size to match other icons visually */
 #bluetooth {
-    font-size: 17px;
+    font-size: 16px;
 }

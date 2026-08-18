@@ -1,6 +1,6 @@
 /* ---- 💫 https://github.com/JaKooLit 💫 ---- */
 
-// ### DEFAULT Laptop  - Top ### //
+// ### DEFAULT Laptop  - Left ### //
 {
 "include": [
   "$HOME/.config/waybar/Modules",
@@ -10,18 +10,18 @@
   "$HOME/.config/waybar/UserModules",
   ],
 "layer": "top",
-"height": 30,
+"width": 30,
 "tooltip": true,
 //"mode": "dock",
 "exclusive": true,
 "passthrough": false,
-"position": "top",
+"position": "left",
 "spacing": 8,
 "fixed-center": true,
 "ipc": true,
-"margin-top": 0,
-"margin-bottom": 0,
-"margin-left": 0,
+"margin-top": 4,
+"margin-bottom": 4,
+"margin-left": 3,
 "margin-right": 0,
 
 "modules-left": [

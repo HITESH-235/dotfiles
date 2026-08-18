@@ -1,5 +1,7 @@
 {
   "$schema": "/etc/xdg/swaync/configSchema.json",
+  "ignore-gtk-theme": true,
+
 
   "positionX": "right",
   "positionY": "top",
@@ -34,7 +36,7 @@
   "script-fail-notify": true,
 
   "widgets": [
-    "slider#volume",
+    "volume",
     "backlight",
     "inhibitors",
     "dnd",
@@ -42,12 +44,8 @@
     "notifications"
   ],
   "widget-config": {
-    "slider#volume": {
-      "label": "󰕾",
-      "min": 0,
-      "max": 100,
-      "cmd_setter": "$HOME/.config/hypr/scripts/Volume.sh --set $value",
-      "cmd_getter": "$HOME/.config/hypr/scripts/Volume.sh --get-scaled"
+    "volume": {
+      "label": "󰕾"
     },
     "backlight": {
       "label": "󰃠"

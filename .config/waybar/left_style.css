@@ -1,0 +1,61 @@
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    font-size: 14px;
+}
+
+window#waybar {
+    background-color: transparent;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    color: #ffffff;
+}
+
+/* Center all modules vertically */
+.modules-center,
+.modules-left,
+.modules-right {
+    background-color: transparent;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+#custom-pin_zen,
+#custom-pin_chrome,
+#custom-pin_chatgpt,
+#custom-pin_ytmusic,
+#custom-pin_leetcode,
+#custom-pin_bin,
+#taskbar button {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 26px;
+    padding: 8px 0;
+    margin: 4px 0;
+    transition: all 0.2s ease;
+    background: transparent;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    min-width: 44px;
+    min-height: 44px;
+}
+
+#custom-pin_zen:hover,
+#custom-pin_chrome:hover,
+#custom-pin_chatgpt:hover,
+#custom-pin_ytmusic:hover,
+#custom-pin_leetcode:hover,
+#custom-pin_bin:hover,
+#taskbar button:hover {
+    color: #88C0D0;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+}
+
+#taskbar button.active {
+    background-color: rgba(136, 192, 208, 0.25);
+    border-left: 3px solid #88C0D0;
+    border-radius: 0 10px 10px 0;
+}
