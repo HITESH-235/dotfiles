@@ -1,0 +1,59 @@
+/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
+/* Main Config - For Keybinds generation */
+
+@import "~/.config/rofi/config.rasi"  
+
+/* ---- Global Properties Overrides ---- */
+* {
+  selected: #e5e5e5;            /* Permanently greyish white accent for selected item */
+  active-background: #909090;   /* Muted grey for borders */
+  border-color: #909090;        /* Muted grey for borders */
+}
+
+/* ---- Mainbox ---- */
+mainbox {
+  children:
+    [ "inputbar", "message", "listview"];
+}
+
+/* ---- Entry ---- */
+entry {
+  expand: true;
+  placeholder: " 🧮 Search Keybinds";
+}
+
+/* ---- Listview ---- */
+listview {
+  columns: 2;
+  lines: 8;
+  fixed-height: false;
+  scrollbar: true;
+  spacing: 6px;
+  cycle: true;
+}
+
+window {
+  width: 75%;                   /* Decreased width from 90% to 75% */
+  height: inherit;
+}
+
+/* ---- Elements ---- */
+element {
+  orientation: horizontal;
+  padding: 6px 10px;            /* Decreased padding for more compact rows */
+}
+
+element-icon {
+  	size: 0%;
+}
+
+element-text {
+    horizontal-align: 0.0;
+    vertical-align: 0.5;
+    margin: 0px;
+    padding: 0px;
+}
+
+element-text selected {
+    text-color: #111111;        /* Crisp dark text on selected greyish white item */
+}
